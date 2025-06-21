@@ -1,10 +1,18 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import Navbar from './components/Navbar';
+import Navbar from '../components/Navbar';
+
+// Define the Product interface
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+  category: string;
+}
 
 export default function Home() {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   // Simulate fetching products from NestJS backend
@@ -16,7 +24,7 @@ export default function Home() {
         // const data = await response.json();
         
         // Mock data for demonstration
-        const mockProducts = [
+        const mockProducts: Product[] = [
           { id: 1, name: 'Premium Headphones', price: 199.99, category: 'Electronics' },
           { id: 2, name: 'Wireless Keyboard', price: 89.99, category: 'Electronics' },
           { id: 3, name: 'Organic Cotton T-Shirt', price: 29.99, category: 'Clothing' },

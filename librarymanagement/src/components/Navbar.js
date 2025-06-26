@@ -26,9 +26,9 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             <Link href="/" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Home</Link>
-            <Link href="/products" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Products</Link>
+            <Link href="/product" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Products</Link>
             <Link href="/about" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">About</Link>
-            <Link href="/contact" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Contact</Link>
+            <Link href="/pages/contacts" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Contact</Link>
           </div>
 
           {/* Mobile menu button */}

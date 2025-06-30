@@ -26,8 +26,8 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             <Link href="/" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Home</Link>
-            <Link href="/product" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Products</Link>
-            <Link href="/about" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">About</Link>
+            <Link href="/pages/product" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">products</Link>
+            <Link href="/pages/about" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">About</Link>
             <Link href="/pages/contacts" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Contact</Link>
           </div>
 
@@ -52,7 +52,7 @@ const Navbar = () => {
         <div className={`md:hidden overflow-hidden transition-all duration-300 ${isMenuOpen ? 'max-h-96' : 'max-h-0'}`}>
           <div className="flex flex-col space-y-3 mt-4 pb-4">
             <Link href="/" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Home</Link>
-            <Link href="/products" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Products</Link>
+            <Link href="/products" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">products</Link>
             <Link href="/about" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">About</Link>
             <Link href="/contact" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Contact</Link>
           </div>

@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 
-// Define the Product interface
-interface Product {
+// Define the product interface
+interface product {
   id: number;
   name: string;
   price: number;
@@ -12,19 +12,19 @@ interface Product {
 }
 
 export default function Home() {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setproducts] = useState<product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   // Simulate fetching products from NestJS backend
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchproducts = async () => {
       try {
         // In a real app, you would fetch from your NestJS API
         // const response = await fetch('http://localhost:3000/api/products');
         // const data = await response.json();
         
         // Mock data for demonstration
-        const mockProducts: Product[] = [
+        const mockproducts: product[] = [
           { id: 1, name: 'Premium Headphones', price: 199.99, category: 'Electronics' },
           { id: 2, name: 'Wireless Keyboard', price: 89.99, category: 'Electronics' },
           { id: 3, name: 'Organic Cotton T-Shirt', price: 29.99, category: 'Clothing' },
@@ -33,7 +33,7 @@ export default function Home() {
           { id: 6, name: 'Leather Wallet', price: 49.99, category: 'Accessories' },
         ];
         
-        setProducts(mockProducts);
+        setproducts(mockproducts);
         setIsLoading(false);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -41,7 +41,7 @@ export default function Home() {
       }
     };
 
-    fetchProducts();
+    fetchproducts();
   }, []);
 
   return (
@@ -72,10 +72,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Featured Products */}
+        {/* Featured products */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Featured Products</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Featured products</h2>
             
             {isLoading ? (
               <div className="flex justify-center items-center py-12">
@@ -90,7 +90,7 @@ export default function Home() {
                     style={{ transitionDelay: `${index * 50}ms` }}
                   >
                     <div className="bg-gray-200 h-48 flex items-center justify-center">
-                      <span className="text-gray-500">Product Image</span>
+                      <span className="text-gray-500">product Image</span>
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
@@ -118,7 +118,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
-                Browse Products
+                Browse products
               </button>
               <button className="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 border border-indigo-600">
                 Learn More
@@ -140,7 +140,7 @@ export default function Home() {
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">products</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
               </ul>

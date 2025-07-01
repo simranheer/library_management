@@ -1,4 +1,3 @@
-// models/Book.js
 import mongoose from 'mongoose';
 
 const bookSchema = new mongoose.Schema({
@@ -18,17 +17,6 @@ const bookSchema = new mongoose.Schema({
     type: String,
     trim: true,
     maxlength: [500, 'Description cannot exceed 500 characters'],
-  },
-  isbn: {
-    type: String,
-    unique: true,
-    trim: true,
-    match: [/^\d{10}|\d{13}$/, 'Please provide a valid ISBN (10 or 13 digits)'],
-  },
-  pdfFileId: {
-    type: String,
-    required: [true, 'PDF file ID is required'],
-    trim: true,
   },
   coverPhotoId: {
     type: String,
@@ -55,6 +43,10 @@ const bookSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  driveLink: {
+    type: String,
+    required: true,
+  },
   updatedAt: {
     type: Date,
     default: Date.now,
@@ -66,4 +58,4 @@ bookSchema.pre('save', function (next) {
   next();
 });
 
-export default mongoose.models.Book || mongoose.model('Book', bookSchema);
+export default mongoose.models.Book || mongoose.model('Book', bookSchema)

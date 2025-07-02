@@ -1,11 +1,27 @@
+"use client";
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import BookCard from '../components/BookCard';
-import BookForm from '../components/BookForm';
+import BookCard from '../../components/BookCard';
+import BookForm from '../../components/BookForm';
 import { motion, AnimatePresence } from 'framer-motion';
 
+interface Book {
+  _id: string;
+  title: string;
+  author: string;
+  description?: string;
+  coverPhotoId?: string;
+  pdfUrl: string;
+  coverPhotoUrl?: string;
+  category: string;
+  publishedDate?: Date;
+  createdAt: Date;
+  driveLink: string;
+  updatedAt: Date;
+}
+
 export default function Home() {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -13,12 +29,27 @@ export default function Home() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
+        console.log('Fetching books...');
         const res = await fetch('/api/books');
+        console.log('Response status:', res.status);
+        
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        
         const data = await res.json();
-        setBooks(data);
+        console.log('Received data:', data);
+        console.log('Data type:', typeof data);
+        console.log('Is array:', Array.isArray(data));
+        
+        // Ensure data is an array, if not, set empty array
+        const booksArray = Array.isArray(data) ? data : [];
+        console.log('Setting books to:', booksArray);
+        setBooks(booksArray);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching books:', error);
+        setBooks([]); // Set empty array on error
         setLoading(false);
       }
     };
@@ -26,12 +57,12 @@ export default function Home() {
     fetchBooks();
   }, []);
 
-  const filteredBooks = books.filter(book => 
+  const filteredBooks = (Array.isArray(books) ? books : []).filter(book => 
     book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     book.author.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleAddBook = async (newBook) => {
+  const handleAddBook = async (newBook: Omit<Book, '_id' | 'createdAt' | 'updatedAt'>) => {
     try {
       const res = await fetch('/api/books', {
         method: 'POST',
@@ -41,19 +72,19 @@ export default function Home() {
         body: JSON.stringify(newBook),
       });
       const data = await res.json();
-      setBooks([...books, data]);
+      setBooks([...(Array.isArray(books) ? books : []), data]);
       setShowForm(false);
     } catch (error) {
       console.error('Error adding book:', error);
     }
   };
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id: string) => {
     try {
       await fetch(`/api/books/${id}`, {
         method: 'DELETE',
       });
-      setBooks(books.filter(book => book._id !== id));
+      setBooks((Array.isArray(books) ? books : []).filter(book => book._id !== id));
     } catch (error) {
       console.error('Error deleting book:', error);
     }

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 
-const adminSchema = mongoose.Schema({
+const adminSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true

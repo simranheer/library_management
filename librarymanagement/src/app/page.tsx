@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Head>
-        <title>ShopNest - Home</title>
+        <title>Library Lynx - Home</title>
         <meta name="description" content="Your one-stop shop for everything" />
       </Head>
 
@@ -60,7 +60,7 @@ export default function Home() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fadeIn">
-                Welcome to ShopNest
+                Welcome to Library Lynx
               </h1>
               <p className="text-xl text-white opacity-90 mb-8 animate-fadeIn delay-100">
                 Discover amazing products at unbeatable prices
@@ -133,7 +133,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-xl font-bold mb-4">ShopNest</h3>
+              <h3 className="text-xl font-bold mb-4">Library Lynx</h3>
               <p className="text-gray-400">Your one-stop shop for everything you need.</p>
             </div>
             <div>
@@ -170,7 +170,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} ShopNest. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Library Lynx. All rights reserved.</p>
           </div>
         </div>
       </footer>

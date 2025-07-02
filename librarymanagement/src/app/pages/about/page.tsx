@@ -188,7 +188,7 @@ export default function AboutPage() {
             </motion.div>
           </div>
 
-          Team Section
+          {/* Team Section
           <motion.div variants={fadeIn} className="mt-20">
             <h2 className="text-3xl font-bold text-center text-indigo-800 mb-12">
               Meet The Team
@@ -247,7 +247,7 @@ export default function AboutPage() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Call to Action */}
           <motion.div

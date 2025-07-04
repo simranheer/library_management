@@ -75,7 +75,7 @@ export default function Home() {
         {/* Featured products */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">Featured products</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-grey-800">Featured products</h2>
             
             {isLoading ? (
               <div className="flex justify-center items-center py-12">

@@ -58,17 +58,17 @@ export default function productPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
-              <span className="text-2xl font-bold text-indigo-600">Libra</span>
+              <span className="text-2xl font-bold text-indigo-600">Library Lynx</span>
               <span className="hidden md:block text-sm font-medium bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">v2.1</span>
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            {/* <div className="hidden md:flex space-x-8">
               <a href="#features" className="text-gray-700 hover:text-indigo-600 transition-colors">Features</a>
               <a href="#pricing" className="text-gray-700 hover:text-indigo-600 transition-colors">Pricing</a>
               <a href="#testimonials" className="text-gray-700 hover:text-indigo-600 transition-colors">Testimonials</a>
               <a href="#contact" className="text-gray-700 hover:text-indigo-600 transition-colors">Contact</a>
-            </div>
+            </div> */}
             
             {/* Mobile Menu Button */}
             <button 
@@ -92,7 +92,7 @@ export default function productPage() {
           </div>
           
           {/* Mobile Menu */}
-          {isMenuOpen && (
+          {/* {isMenuOpen && (
             <div className="md:hidden mt-4 space-y-3 pb-3">
               <a href="#features" className="block text-gray-700 hover:text-indigo-600 transition-colors">Features</a>
               <a href="#pricing" className="block text-gray-700 hover:text-indigo-600 transition-colors">Pricing</a>
@@ -102,7 +102,7 @@ export default function productPage() {
                 Get Started
               </button>
             </div>
-          )}
+          )} */}
         </div>
       </nav>
 

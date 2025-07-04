@@ -1,5 +1,5 @@
-"use client"
-import { useState, useEffect } from 'react';
+"use client";
+import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import Head from 'next/head';
 
@@ -42,20 +42,36 @@ const AdminLogin = () => {
     setError('');
 
     try {
-      // Simulate API call (replace with actual authentication)
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Mock authentication - replace with your actual authentication logic
-      if (credentials.email === 'admin@library.com' && credentials.password === 'admin123') {
-        // Redirect to admin dashboard
-        router.push('/admin/dashboard');
-      } else {
-        setError('Invalid email or password');
-        setShake(true);
-        setTimeout(() => setShake(false), 500);
+      const response = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: credentials.email,
+          password: credentials.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Invalid email or password');
       }
+
+      // Store the token in localStorage (or use cookies for better security)
+      localStorage.setItem('adminToken', data.token);
+      localStorage.setItem('adminData', JSON.stringify({
+        _id: data._id,
+        name: data.name,
+        email: data.email,
+        role: data.role,
+      }));
+
+      // Redirect to admin dashboard
+      router.push('/admin/dashboard');
     } catch (err) {
-      setError('An error occurred. Please try again.');
+      setError(err.message || 'An error occurred. Please try again.');
       setShake(true);
       setTimeout(() => setShake(false), 500);
     } finally {

@@ -15,7 +15,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-white/90 backdrop-blur-sm py-4'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -25,17 +25,38 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Home</Link>
-            <Link href="/pages/product" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">products</Link>
-            <Link href="/pages/about" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">About</Link>
-            <Link href="/pages/contacts" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Contact</Link>
+            <Link 
+              href="/" 
+              className="text-gray-800 hover:text-indigo-600 transition-colors duration-200 font-medium"
+            >
+              Home
+            </Link>
+            <Link 
+              href="/pages/product" 
+              className="text-gray-800 hover:text-indigo-600 transition-colors duration-200 font-medium"
+            >
+              Products
+            </Link>
+            <Link 
+              href="/pages/about" 
+              className="text-gray-800 hover:text-indigo-600 transition-colors duration-200 font-medium"
+            >
+              About
+            </Link>
+            <Link 
+              href="/pages/contacts" 
+              className="text-gray-800 hover:text-indigo-600 transition-colors duration-200 font-medium"
+            >
+              Contact
+            </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-indigo-600 focus:outline-none"
+              className="text-gray-800 hover:text-indigo-600 focus:outline-none"
+              aria-label="Toggle menu"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 {isMenuOpen ? (
@@ -49,12 +70,36 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`md:hidden overflow-hidden transition-all duration-300 ${isMenuOpen ? 'max-h-96' : 'max-h-0'}`}>
-          <div className="flex flex-col space-y-3 mt-4 pb-4">
-            <Link href="/" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Home</Link>
-            <Link href="/products" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">products</Link>
-            <Link href="/about" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">About</Link>
-            <Link href="/contact" className="text-gray-700 hover:text-indigo-600 transition-colors duration-200 font-medium">Contact</Link>
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 py-4' : 'max-h-0'}`}>
+          <div className="flex flex-col space-y-4">
+            <Link 
+              href="/" 
+              className="text-gray-800 hover:text-indigo-600 transition-colors duration-200 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link 
+              href="/pages/product" 
+              className="text-gray-800 hover:text-indigo-600 transition-colors duration-200 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Products
+            </Link>
+            <Link 
+              href="/pages/about" 
+              className="text-gray-800 hover:text-indigo-600 transition-colors duration-200 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link 
+              href="/pages/contacts" 
+              className="text-gray-800 hover:text-indigo-600 transition-colors duration-200 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </Link>
           </div>
         </div>
       </div>

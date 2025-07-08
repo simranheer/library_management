@@ -19,11 +19,7 @@ export default function Home() {
   useEffect(() => {
     const fetchproducts = async () => {
       try {
-        // In a real app, you would fetch from your NestJS API
-        // const response = await fetch('http://localhost:3000/api/products');
-        // const data = await response.json();
-        
-        // Mock data for demonstration
+     
         const mockproducts: product[] = [
           { id: 1, name: 'Premium Headphones', price: 199.99, category: 'Electronics' },
           { id: 2, name: 'Wireless Keyboard', price: 89.99, category: 'Electronics' },

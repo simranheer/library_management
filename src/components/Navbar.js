@@ -32,10 +32,10 @@ const Navbar = () => {
               Home
             </Link>
             <Link 
-              href="/pages/product" 
+              href="/pages/allBooks" 
               className="text-gray-800 hover:text-indigo-600 transition-colors duration-200 font-medium"
             >
-              Products
+              All Books
             </Link>
             <Link 
               href="/pages/about" 

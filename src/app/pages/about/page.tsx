@@ -62,7 +62,7 @@ export default function AboutPage() {
                   Our Mission
                 </h2>
                 <p className="text-gray-700 mb-6">
-                  To provide an intuitive, efficient, and modern solution for
+                  To provides an intuitive, efficient, and modern solution for
                   managing library resources, making it easier for librarians to
                   organize collections and for patrons to discover books.
                 </p>

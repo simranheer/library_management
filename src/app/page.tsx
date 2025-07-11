@@ -1,14 +1,15 @@
 "use client"
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import Navbar from '../components/Navbar';
 
 // Define the product interface
 interface product {
   id: number;
   name: string;
-  price: number;
-  category: string;
+  description: string;
+  photo: string;
 }
 
 export default function Home() {
@@ -21,12 +22,10 @@ export default function Home() {
       try {
      
         const mockproducts: product[] = [
-          { id: 1, name: 'Premium Headphones', price: 199.99, category: 'Electronics' },
-          { id: 2, name: 'Wireless Keyboard', price: 89.99, category: 'Electronics' },
-          { id: 3, name: 'Organic Cotton T-Shirt', price: 29.99, category: 'Clothing' },
-          { id: 4, name: 'Stainless Steel Water Bottle', price: 24.99, category: 'Accessories' },
-          { id: 5, name: 'Fitness Tracker', price: 79.99, category: 'Electronics' },
-          { id: 6, name: 'Leather Wallet', price: 49.99, category: 'Accessories' },
+          { id: 1, name: 'Operating System', description: 'Exploring the coe concepts behind process management , memory , file systems , and security. ', photo: 'https://res.cloudinary.com/dqohuz0wc/image/upload/v1752121987/Screenshot_2025-07-08_103018_uzq8aj.png' },
+          { id: 2, name: 'Data Structure And Algorithm', description: 'Focuses on efficient algorithm design and implementation with real world applications in C++.', photo: 'https://res.cloudinary.com/dqohuz0wc/image/upload/v1752121988/Screenshot_2025-07-08_103550_nfvg2r.png' },
+          { id: 3, name: 'Software Engineering', description: 'Prepares students for real-world software development through structured engineering practices and tools.', photo: 'https://res.cloudinary.com/dqohuz0wc/image/upload/v1752121987/Screenshot_2025-07-08_103151_zeow2t.png' },
+          
         ];
         
         setproducts(mockproducts);
@@ -59,11 +58,9 @@ export default function Home() {
                 Welcome to Library Lynx
               </h1>
               <p className="text-xl text-white opacity-90 mb-8 animate-fadeIn delay-100">
-                Discover amazing products at unbeatable prices
+                Discover amazing Books
               </p>
-              <button className="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 animate-fadeIn delay-200">
-                Shop Now
-              </button>
+              
             </div>
           </div>
         </section>
@@ -86,16 +83,15 @@ export default function Home() {
                     style={{ transitionDelay: `${index * 50}ms` }}
                   >
                     <div className="bg-gray-200 h-48 flex items-center justify-center">
-                      <span className="text-gray-500">product Image</span>
+                      <img className='w-full h-full object-contain' src={product.photo} alt="photo" />
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
-                      <p className="text-gray-600 mb-4">{product.category}</p>
+                      <p className="text-gray-600 mb-4">{product.description}</p>
+                      
                       <div className="flex justify-between items-center">
-                        <span className="text-lg font-bold text-indigo-600">${product.price.toFixed(2)}</span>
-                        <button className="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition-colors duration-200">
-                          Add to Cart
-                        </button>
+                        
+                        
                       </div>
                     </div>
                   </div>
@@ -108,17 +104,14 @@ export default function Home() {
         {/* Call to Action */}
         <section className="py-16 bg-gray-100">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6 text-gray-800">Ready to transform your shopping experience?</h2>
+            <h2 className="text-3xl font-bold mb-6 text-gray-800">Ready to transform your learning experience?</h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who shop with us every day.
+              Join thousands of satisfied students who learn with us every day.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
-                Browse products
-              </button>
-              <button className="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 border border-indigo-600">
-                Learn More
-              </button>
+              <Link href="/allBooks" className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
+                Explore Books
+              </Link>
             </div>
           </div>
         </section>

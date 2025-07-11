@@ -48,6 +48,7 @@ export default function productPage() {
   return (
     
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+
       <Head>
         <title>Libra | Modern Library Management System</title>
         <meta name="description" content="Next-gen library management solution" />

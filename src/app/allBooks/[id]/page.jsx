@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 
+
 export default function BookDetailPage() {
   const { id } = useParams();
   const [book, setBook] = useState(null);
@@ -118,7 +119,8 @@ export default function BookDetailPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#e6eff2] pt-22">
+
+        <div className="min-h-screen bg-[#e6eff2] pt-22">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -223,5 +225,6 @@ export default function BookDetailPage() {
         </div>
       </motion.div>
     </div>
+
   );
 }

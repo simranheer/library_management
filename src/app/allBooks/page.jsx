@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Navbar from"../../components/Navbar";
 
 const BookGallery = () => {
   const [books, setBooks] = useState([]);
@@ -104,7 +105,9 @@ const BookGallery = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#e6eff2] py-12 px-4 sm:px-6 lg:px-8 pt-22">
+<>
+<Navbar/>
+<div className="min-h-screen bg-[#e6eff2] py-12 px-4 sm:px-6 lg:px-8 pt-22">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -288,6 +291,7 @@ const BookGallery = () => {
         )}
       </AnimatePresence>
     </div>
+</>
   );
 };
 

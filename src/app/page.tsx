@@ -82,25 +82,28 @@ export default function Home() {
                     className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"
                     style={{ transitionDelay: `${index * 50}ms` }}
                   >
-                    <div className="bg-gray-200 h-48 flex items-center justify-center">
+                    <div className="bg-gray-200 h-88 flex items-center justify-center">
                       <img className='w-full h-full object-contain' src={product.photo} alt="photo" />
                     </div>
                     <div className="p-6">
                       <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
                       <p className="text-gray-600 mb-4">{product.description}</p>
                       
-                      <div className="flex justify-between items-center">
-                        
-                        
-                      </div>
+                     
                     </div>
                   </div>
                 ))}
+                 
               </div>
+              
             )}
           </div>
         </section>
-
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+                          <Link href="/allBooks" className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
+                            Explore Books
+                          </Link>
+                      </div>
         {/* Call to Action */}
         <section className="py-16 bg-gray-100">
           <div className="container mx-auto px-4 text-center">
@@ -108,11 +111,7 @@ export default function Home() {
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Join thousands of satisfied students who learn with us every day.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link href="/allBooks" className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
-                Explore Books
-              </Link>
-            </div>
+           
           </div>
         </section>
       </main>

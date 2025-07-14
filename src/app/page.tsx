@@ -52,6 +52,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="relative pt-24 pb-16 md:pt-32 md:pb-24">
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 opacity-90"></div>
+  
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 animate-fadeIn">
@@ -60,7 +61,7 @@ export default function Home() {
               <p className="text-xl text-white opacity-90 mb-8 animate-fadeIn delay-100">
                 Discover amazing Books
               </p>
-              
+
             </div>
           </div>
         </section>

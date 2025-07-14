@@ -1,6 +1,6 @@
 // about/page.tsx
 "use client";
-
+import Navbar from"../../../components/Navbar"
 import { motion } from "framer-motion";
 import Head from "next/head";
 
@@ -26,7 +26,8 @@ export default function AboutPage() {
   };
 
   return (
-    <>
+    <> 
+    <Navbar/>
       <Head>
         <title>About | Library Management System</title>
         <meta
@@ -35,7 +36,7 @@ export default function AboutPage() {
         />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8 pt-22">
         <motion.div
           initial="hidden"
           animate="visible"

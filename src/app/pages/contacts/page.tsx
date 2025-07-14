@@ -1,8 +1,8 @@
 "use client";
-import Navbar from '../../../components/Navbar';
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
+import Navbar from "../../../components/Navbar"
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -63,6 +63,7 @@ const ContactPage = () => {
 
   return (
     <>
+    <Navbar/>
       <Head>
         <title>Contact Us | Library Management System</title>
         <meta name="description" content="Get in touch with our library management team" />
@@ -72,7 +73,7 @@ const ContactPage = () => {
         initial="hidden"
         animate="visible"
         variants={containerVariants}
-        className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8"
+        className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8 pt-22"
       >
         <div className="max-w-7xl mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-12">

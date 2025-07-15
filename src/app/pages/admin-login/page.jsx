@@ -66,10 +66,11 @@ const AdminLogin = () => {
         name: data.name,
         email: data.email,
         role: data.role,
+        token: data.token
       }));
 
       // Redirect to admin dashboard
-      router.push('/admin/dashboard');
+      router.push('/simran');
     } catch (err) {
       setError(err.message || 'An error occurred. Please try again.');
       setShake(true);

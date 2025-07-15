@@ -10,7 +10,7 @@ export default function AdminRouteProtect({ children }) {
     const adminData = localStorage.getItem('adminData');
     if (!adminData) {
      
-      router.replace('/simran');
+      router.replace('/pages/admin-login');
     }
   }, [router]);
 

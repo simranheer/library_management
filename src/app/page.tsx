@@ -50,8 +50,8 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative pt-24 pb-16 md:pt-32 md:pb-24">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 opacity-90"></div>
+        <section className="relative pt-24  h-[500px] pb-16 md:pt-62 md:pb-24 bg-[url('https://miro.medium.com/v2/resize:fit:1200/1*6Jp3vJWe7VFlFHZ9WhSJng.jpeg')] bg-cover bg-center">
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-00 to-purple-600 opacity-80"></div>
   
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
@@ -69,7 +69,7 @@ export default function Home() {
         {/* Featured products */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12 text-grey-800">Featured products</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 text-black">Featured products</h2>
             
             {isLoading ? (
               <div className="flex justify-center items-center py-12">

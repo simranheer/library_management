@@ -50,7 +50,7 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative pt-24  h-[500px] pb-16 md:pt-62 md:pb-24 bg-[url('https://miro.medium.com/v2/resize:fit:1200/1*6Jp3vJWe7VFlFHZ9WhSJng.jpeg')] bg-cover bg-center">
+        <section className="relative pt-24  h-[500px] pb-16 md:pt-62 md:pb-24 bg-[url('https://res.cloudinary.com/dqohuz0wc/image/upload/v1752469748/Screenshot_2025-07-14_103655_jbt5ap.png')] bg-cover bg-center">
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-00 to-purple-600 opacity-80"></div>
   
           <div className="container mx-auto px-4 relative z-10">

@@ -67,7 +67,7 @@ export default function Home() {
         </section>
 
         {/* Featured products */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-light to-blue-50">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12 text-black">Featured products</h2>
             
@@ -129,9 +129,9 @@ export default function Home() {
               <h4 className="font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">products</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                <li><a href="/allBooks" className="text-gray-400 hover:text-white transition-colors">products</a></li>
+                <li><a href="/pages/about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                <li><a href="/pages/contacts" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
               </ul>
             </div>
             <div>

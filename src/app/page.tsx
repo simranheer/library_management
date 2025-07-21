@@ -10,6 +10,7 @@ interface product {
   name: string;
   description: string;
   photo: string;
+  link: string
 }
 
 export default function Home() {
@@ -22,9 +23,9 @@ export default function Home() {
       try {
      
         const mockproducts: product[] = [
-          { id: 1, name: 'Operating System', description: 'Exploring the coe concepts behind process management , memory , file systems , and security. ', photo: 'https://res.cloudinary.com/dqohuz0wc/image/upload/v1752121987/Screenshot_2025-07-08_103018_uzq8aj.png' },
-          { id: 2, name: 'Data Structure And Algorithm', description: 'Focuses on efficient algorithm design and implementation with real world applications in C++.', photo: 'https://res.cloudinary.com/dqohuz0wc/image/upload/v1752121988/Screenshot_2025-07-08_103550_nfvg2r.png' },
-          { id: 3, name: 'Software Engineering', description: 'Prepares students for real-world software development through structured engineering practices and tools.', photo: 'https://res.cloudinary.com/dqohuz0wc/image/upload/v1752121987/Screenshot_2025-07-08_103151_zeow2t.png' },
+          { id: 1, name: 'Operating System', description: 'Exploring the coe concepts behind process management , memory , file systems , and security. ', photo: 'https://res.cloudinary.com/dqohuz0wc/image/upload/v1752121987/Screenshot_2025-07-08_103018_uzq8aj.png',link:'https://library-management-sigma-lime.vercel.app/allBooks/686def8e9083e739dd4c1368' },
+          { id: 2, name: 'Data Structure And Algorithm', description: 'Focuses on efficient algorithm design and implementation with real world applications in C++.', photo: 'https://res.cloudinary.com/dqohuz0wc/image/upload/v1752121988/Screenshot_2025-07-08_103550_nfvg2r.png',link:"https://library-management-sigma-lime.vercel.app/allBooks/686df20a9083e739dd4c136a" },
+          { id: 3, name: 'Software Engineering', description: 'Prepares students for real-world software development through structured engineering practices and tools.', photo: 'https://res.cloudinary.com/dqohuz0wc/image/upload/v1752121987/Screenshot_2025-07-08_103151_zeow2t.png',link:"https://library-management-sigma-lime.vercel.app/allBooks/686df41e9083e739dd4c136c" },
           
         ];
         
@@ -89,7 +90,7 @@ export default function Home() {
                     <div className="p-6">
                       <h3 className="text-xl font-semibold text-gray-800 mb-2">{product.name}</h3>
                       <p className="text-gray-600 mb-4">{product.description}</p>
-                      
+                      <Link href={product.link} className='bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105'>Read More</Link>
                      
                     </div>
                   </div>
@@ -101,7 +102,7 @@ export default function Home() {
           </div>
         </section>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-                          <Link href="/allBooks" className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">
+                          <Link href="/allBooks" className="bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-indigo-700 duration-300 ">
                             Explore Books
                           </Link>
                       </div>

@@ -4,7 +4,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-
+import Navbar from "../../../components/Navbar"
 
 export default function BookDetailPage() {
   const { id } = useParams();
@@ -119,7 +119,8 @@ export default function BookDetailPage() {
   };
 
   return (
-
+<>
+<Navbar/>
         <div className="min-h-screen bg-[#e6eff2] pt-22">
       <motion.div
         initial="hidden"
@@ -225,6 +226,6 @@ export default function BookDetailPage() {
         </div>
       </motion.div>
     </div>
-
+</>
   );
 }
